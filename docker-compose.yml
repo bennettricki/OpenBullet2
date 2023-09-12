@@ -10,7 +10,8 @@ services:
         # Change UserData to the location of where you want UserData folder to be placed
         # This currently assumes your on linux and want the folder in the same location as the docker-compose file
         # You can set a windows dir like 'C:/OB2/UserData/:/app/UserData/' but it will always be 'local dir:docker dir'
-            - './UserData:/app/UserData/'
+        UserData: 
+           driver: local
         image: 'openbullet/openbullet2:latest'
 
     # Watchtower will auto update OB2 for you when it sees a new release
